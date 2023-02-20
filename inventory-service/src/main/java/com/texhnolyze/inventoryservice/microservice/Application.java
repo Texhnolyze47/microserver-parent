@@ -23,7 +23,7 @@ public class Application {
 
 			Inventory inventory1 = new Inventory();
 			inventory1.setSkuCode("medicina_1_pastillas");
-			inventory1.setQuantity(100);
+			inventory1.setQuantity(0);
 
 			inventoryRepository.save(inventory);
 			inventoryRepository.save(inventory1);
