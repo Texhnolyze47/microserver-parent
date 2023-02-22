@@ -1,4 +1,4 @@
-package com.texhnolyze.orderservice.microservice;
+package com.texhnolyze.orderservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

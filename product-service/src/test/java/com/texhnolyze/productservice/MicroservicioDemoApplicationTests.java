@@ -1,4 +1,4 @@
-package com.texhnolyze.productservice.microservice;
+package com.texhnolyze.productservice;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.texhnolyze.productservice.microservice.dto.ProductResquest;

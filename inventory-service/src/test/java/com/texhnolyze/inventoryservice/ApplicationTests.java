@@ -1,4 +1,4 @@
-package com.texhnolyze.inventoryservice.microservice;
+package com.texhnolyze.inventoryservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,9 +1,9 @@
 package com.texhnolyze.productservice.microservice.service;
 
+import com.texhnolyze.productservice.microservice.repository.ProductRepository;
 import com.texhnolyze.productservice.microservice.dto.ProductResponse;
 import com.texhnolyze.productservice.microservice.dto.ProductResquest;
 import com.texhnolyze.productservice.microservice.model.Product;
-import com.texhnolyze.productservice.microservice.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

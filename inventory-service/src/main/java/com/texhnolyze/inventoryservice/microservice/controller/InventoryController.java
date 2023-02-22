@@ -1,7 +1,7 @@
 package com.texhnolyze.inventoryservice.microservice.controller;
 
-import com.texhnolyze.inventoryservice.microservice.dto.InventoryResponse;
 import com.texhnolyze.inventoryservice.microservice.service.InventoryService;
+import com.texhnolyze.inventoryservice.microservice.dto.InventoryResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
