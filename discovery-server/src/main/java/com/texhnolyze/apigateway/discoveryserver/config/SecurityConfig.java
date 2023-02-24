@@ -15,9 +15,9 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-    @Value("${eureka.username")
+    @Value("${eureka.username}")
     private String username;
-    @Value("${eureka.password")
+    @Value("${eureka.password}")
     private String password;
 
     @Bean
