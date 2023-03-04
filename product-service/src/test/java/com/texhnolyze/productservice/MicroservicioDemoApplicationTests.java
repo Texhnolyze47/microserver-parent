@@ -1,6 +1,7 @@
 package com.texhnolyze.productservice;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.texhnolyze.productservice.microservice.ProductServiceApplication;
 import com.texhnolyze.productservice.microservice.dto.ProductResquest;
 import com.texhnolyze.productservice.microservice.repository.ProductRepository;
 import org.junit.jupiter.api.Assertions;
@@ -21,7 +22,7 @@ import java.math.BigDecimal;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@SpringBootTest
+@SpringBootTest(classes = ProductServiceApplication.class)
 @Testcontainers
 @AutoConfigureMockMvc
 class MicroservicioDemoApplicationTests {
