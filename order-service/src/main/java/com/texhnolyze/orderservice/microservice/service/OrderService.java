@@ -5,11 +5,12 @@ import brave.Tracer;
 import com.texhnolyze.orderservice.microservice.dto.InventoryResponse;
 import com.texhnolyze.orderservice.microservice.dto.OrderListItemsDto;
 import com.texhnolyze.orderservice.microservice.dto.OrderRequest;
+import com.texhnolyze.orderservice.microservice.event.OrderPlacedEvent;
 import com.texhnolyze.orderservice.microservice.model.Order;
 import com.texhnolyze.orderservice.microservice.model.OrderListItems;
 import com.texhnolyze.orderservice.microservice.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
-import org.aspectj.weaver.tools.Trace;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -26,6 +27,7 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final WebClient.Builder webClientBuilder;
     private final Tracer tracer;
+    private final KafkaTemplate kafkaTemplate;
     public String placeOrder(OrderRequest orderRequest){
         Order order = new Order();
         order.setOrderNumber(UUID.randomUUID().toString());
@@ -57,6 +59,7 @@ public class OrderService {
 
             if (allProductsInStock){
                 orderRepository.save(order);
+                kafkaTemplate.send("notificationTopic", new OrderPlacedEvent(order.getOrderNumber()));
                 return "Order Placed Successfully";
             }else {
                 throw new IllegalArgumentException("Product is not in stock, please try again later");
